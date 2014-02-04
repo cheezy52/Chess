@@ -1,17 +1,19 @@
 class Piece
-  attr_reader :board, :color, :pos
+  attr_reader :board, :color
+  attr_accessor :pos
 
   def initialize(board, color, pos)
     @board = board
     @color = color
     @pos = pos
+    @board[pos] = self
   end
 
   def move(target_pos)
     if valid_move?(target_pos)
       capture_piece(target_pos)
+      @board[pos], @board[target_pos] = nil, self
       self.pos = target_pos
-      @board[pos] = self
     else raise RuntimeError.new("This is not a valid move position")
     end
     nil
@@ -44,78 +46,3 @@ class Piece
     piece.color == self.color
   end
 end
-
-class SlidingPiece < Piece
-  HORIZ = [[1, 0], [0, 1], [-1, 0], [0, -1]]
-  DIAG = [[1, 1], [1, -1], [-1, -1], [-1, 1]]
-
-  def valid_move?(target_pos)
-    # check horiz / diag positions
-    on_board?(pos)
-    move_list = self.build_move_list
-    super
-  end
-
-  def build_move_list
-    move_list = []
-    self.move_dirs.each do |vector|
-      test_pos = @pos.dup
-
-      stop = false
-      until stop
-        test_pos[0] += vector[0]
-        test_pos[1] += vector[1]
-        if on_board?(test_pos)
-          if @board[test_pos].nil?
-            move_list << test_pos
-          else
-            move_list << test_pos unless friendly_piece?(@board[test_pos])
-            stop = true
-          end
-        else
-          stop = true
-        end
-      end
-    end
-    move_list
-  end
-end
-
-class Bishop < SlidingPiece
-  def move_dirs
-    DIAG
-  end
-end
-
-class Rook < SlidingPiece
-  def move_dirs
-    HORIZ
-  end
-end
-
-class Queen < SlidingPiece
-  def move_dirs
-    DIAG + HORIZ
-  end
-end
-
-class SteppingPiece < Piece
-  OFFSETS = [[]]
-  def valid_move?(target_pos)
-    # check if valid move coord
-    super(target_pos)
-  end
-
-end
-
-class Knight < SteppingPiece
-end
-
-class King < SteppingPiece
-end
-
-# to do
-class Pawn
-end
-
-
