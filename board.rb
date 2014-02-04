@@ -38,4 +38,22 @@ class Board
     end
     print string.encode('utf-8')
   end
+
+  def all_pieces
+    pieces = []
+    @grid.each do |rows|
+      rows.each do |tile|
+        pieces << tile if tile
+      end
+    end
+    pieces
+  end
+
+  def in_check?(color)
+    find_king(color).in_check?
+  end
+
+  def find_king(color)
+    all_pieces.find { |piece| piece.class == King && piece.color == color }
+  end
 end
