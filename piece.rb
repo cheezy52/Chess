@@ -11,7 +11,7 @@ class Piece
 
   def move(target_pos)
     if valid_move?(target_pos)
-      capture_piece(target_pos)
+      capture_piece(target_pos) if @board[target_pos]
       @board[pos], @board[target_pos] = nil, self
       self.pos = target_pos
     else raise RuntimeError.new("This is not a valid move position")
@@ -20,11 +20,9 @@ class Piece
   end
 
   def capture_piece(pos)
-    captured_piece = nil
-    if @board[pos]
-      captured_piece = @board[pos]
-      @board[pos] = nil
-    end
+    puts "#{self} captures #{@board[pos]}"
+    captured_piece = @board[pos]
+    @board[pos] = nil
     captured_piece
   end
 

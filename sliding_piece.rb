@@ -21,9 +21,9 @@ class SlidingPiece < Piece
         test_pos[1] += vector[1]
         if on_board?(test_pos)
           if @board[test_pos].nil?
-            move_list << test_pos
+            move_list << test_pos.dup
           else
-            move_list << test_pos unless friendly_piece?(@board[test_pos])
+            move_list << test_pos.dup unless friendly_piece?(@board[test_pos])
             stop = true
           end
         else

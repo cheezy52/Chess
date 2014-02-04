@@ -29,14 +29,35 @@ class Queen < SlidingPiece
 end
 
 class Knight < SteppingPiece
-  OFFSETS = [[2, 1], [-2, 1], [2, -1], [-2, -1], [1, 2], [-1, 2], [1, -2], [-1, -2]]
+
+  def move_dirs
+    [[2, 1], [-2, 1], [2, -1], [-2, -1], [1, 2], [-1, 2], [1, -2], [-1, -2]]
+  end
+
   def to_s
     self.color == :w ? "\u2658" : "\u265E"
   end
 end
 
 class King < SteppingPiece
-  OFFSETS = [[1, 1], [1, 0], [1, -1], [0, 1], [0, -1], [-1, 1], [-1, 0], [-1, -1]]
+
+  def move_dirs
+    [[1, 1], [1, 0], [1, -1], [0, 1], [0, -1], [-1, 1], [-1, 0], [-1, -1]]
+  end
+
+  def in_check?
+    # look through all
+    other_player_color = ( self.color == :w ? :b : :w )
+    enemy_pieces = @board.all_pieces.select do |piece|
+      piece.color == other_player_color
+    end
+    threatened_squares = []
+    enemy_pieces.each do |piece|
+      threatened_squares += piece.build_move_list
+    end
+    threatened_squares.include?(self.pos)
+  end
+
   def to_s
     self.color == :w ? "\u2654" : "\u265A"
   end
@@ -46,7 +67,11 @@ end
 # implemented as steppingpiece FOR TESTING ONLY - full functionality todo
 #class Pawn
 class Pawn < SteppingPiece
-  self.color == :w ? OFFSETS = [1, 0] : OFFSETS = [-1, 0]
+
+  def move_dirs
+    [[1, 0], [-1, 0]]
+  end
+
   def to_s
     self.color == :w ? "\u2659" : "\u265F"
   end
