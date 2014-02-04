@@ -4,7 +4,7 @@ class Board
   attr_accessor :grid
   def initialize(game, populated = true)
     @game = game
-    @grid = build_empty_board
+    @grid = populated ? build_empty_board : build_starting_board
   end
 
   def [](pos)
@@ -17,6 +17,11 @@ class Board
 
   def build_empty_board
     Array.new(8) { Array.new(8) }
+  end
+
+  #todo: this
+  def build_starting_board
+    build_empty_board
   end
 
   def to_s
