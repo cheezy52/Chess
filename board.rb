@@ -27,7 +27,9 @@ class Board
   def to_s
     string = ""
     tile_color = :yellow
-    @grid.each do |row|
+    string += "  a b c d e f g h\n"
+    @grid.each_with_index do |row, index|
+      string += "#{index+1} "
       tile_color = (tile_color == :yellow ? :red : :yellow )
       row.each do |tile|
         if tile
@@ -39,8 +41,9 @@ class Board
         tile_color = (tile_color == :yellow ? :red : :yellow )
       end
 
-      string += "\n"
+      string += " #{index+1}\n"
     end
+    string += "  a b c d e f g h\n"
     print string.encode('utf-8')
   end
 
