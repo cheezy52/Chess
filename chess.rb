@@ -29,7 +29,7 @@ class Game
       begin
         puts @board
         start_pos, end_pos = @current_player.play_turn
-        p [start_pos, end_pos]
+        validate_start_pos(start_pos)
         @board[start_pos].move(end_pos)
       rescue => e
         p "ERROR - please retry"
@@ -40,6 +40,14 @@ class Game
       @current_player = (@current_player == @white_player ? @black_player : @white_player)
     end
     puts "Game over!"
+  end
+
+  def valid_start_pos?(start_pos)
+    if @board[start_pos].nil?
+      raise ArgumentError.new("That's an empty space.")
+    elsif @board[start_pos].color != @current_player.color
+      raise ArgumentError.new("That's not your piece.")
+    end
   end
 
   def over?
