@@ -32,7 +32,7 @@ class Piece
     # pos empty or pos contains enemy piece - OK!
     # pos contains friendly piece? - not OK
     raise friendly_piece_error if friendly_piece?(@board[pos])
-    raise off_board_error if !on_board?(pos)
+    raise off_board_error if !@board.on_board?(pos)
   end
 
   def on_board?(pos)

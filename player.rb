@@ -18,7 +18,7 @@ class Player
     begin
       puts message
       pos = parse_input(gets.chomp)
-      raise ArgumentError.new("Input invalid.  Please re-enter.") unless valid_input?(start_pos)
+      raise ArgumentError.new("Input invalid.  Please re-enter.") unless valid_input?(pos)
     rescue ArgumentError => e
       puts e
       retry
@@ -41,6 +41,7 @@ class Player
     raise ArgumentError.new("Please enter a valid square.") if input.length != 2
     col_hash = {"a" => 0, "b" => 1, "c" => 2, "d" => 3, "e" => 4, "f" => 5, "g" => 6, "h" => 7}
     col, row = input.split("")
+    row = row.to_i
     [row - 1, col_hash[col]]
   end
 end

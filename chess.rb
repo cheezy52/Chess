@@ -7,11 +7,21 @@ require_relative "pieces"
 
 
 class Game
+
+  attr_reader :board
+
   def initialize(white_player, black_player)
-    @white_player = white_player
-    @black_player = black_player
-    @current_player = @white_player
     @board = Board.new(self)
+    @white_player = associate_player(white_player, :w)
+    @black_player = associate_player(black_player, :b)
+    @current_player = @white_player
+  end
+
+  def associate_player(player, color)
+    player.game = self
+    player.board = @board
+    player.color = color
+    player
   end
 
   def play
@@ -19,9 +29,11 @@ class Game
       begin
         puts @board
         start_pos, end_pos = @current_player.play_turn
+        p [start_pos, end_pos]
         @board[start_pos].move(end_pos)
-      rescue
+      rescue => e
         p "ERROR - please retry"
+        p e
         retry
       end
       # need to implement FORFEIT function
