@@ -6,7 +6,6 @@ class Piece
     @board = board
     @color = color
     @pos = pos
-    @board[pos] = self
   end
 
   def move(target_pos)

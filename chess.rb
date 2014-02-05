@@ -1,9 +1,9 @@
-require_relative "board"
-require_relative "player"
 require_relative "piece"
 require_relative "sliding_piece"
 require_relative "stepping_piece"
 require_relative "pieces"
+require_relative "board"
+require_relative "player"
 require_relative "errors"
 require "colorize"
 
@@ -42,7 +42,6 @@ class Game
           puts e
           retry
         end
-        # need to implement FORFEIT function
         @current_player = (@current_player == @white_player ? @black_player : @white_player)
       end
     end

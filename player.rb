@@ -9,7 +9,7 @@ class Player
 
   def play_turn
     start_pos = get_pos("Please enter the square (e.g. a5, e2) of the piece you would like to move:")
-    end_pos = get_pos("Please enter the square you would like to move to: ")
+    end_pos = get_pos("Please enter the square you would like to move to:")
     [start_pos, end_pos]
   end
 
