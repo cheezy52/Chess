@@ -52,6 +52,18 @@ class Board
     @grid
   end
 
+  def dup
+    new_grid = build_empty_board
+    @grid.each_with_index do |row, row_index|
+      row.each_with_index do |tile, col_index|
+        new_grid[row_index][col_index] = tile.dup unless tile.nil?
+      end
+    end
+    new_board = Board.new(@game, false)
+    new_board.grid = new_grid
+    new_board
+  end
+
   def create_piece_at(pos)
     # use for pawns that reach the end
   end

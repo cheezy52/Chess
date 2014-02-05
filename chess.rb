@@ -58,3 +58,9 @@ class Game
   end
 end
 
+if __FILE__ == $PROGRAM_NAME
+  p1 = Player.new("Alice")
+  p2 = Player.new("Bob")
+  g = Game.new(p1, p2)
+  g.play
+end
