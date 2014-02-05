@@ -7,7 +7,14 @@ require_relative "player"
 require_relative "errors"
 require "colorize"
 
-#TODO: Victory/draw conditions
+# TODO:
+# draw conditions
+# movement special cases: en passant, castling, pawn promotion
+# computer player
+# save / load; replays?
+# source code cleanup - finish splitting classes, decomposition, line-tightening, privatization
+# general UI improvements
+
 class Game
 
   attr_reader :board, :white_player, :black_player, :current_player
@@ -18,6 +25,7 @@ class Game
     @black_player = associate_player(black_player, :b)
     @current_player = @white_player
     @winner = nil
+    @move_history = [@board.dup]
   end
 
   def associate_player(player, color)
@@ -49,11 +57,8 @@ class Game
         puts @board
 
         if @board.in_check?(next_player.color)
-          if checkmate?(next_player)
+          if @board.checkmate?(next_player.color)
             @winner = @current_player
-            puts "Checkmate! Good work, #{@current_player}."
-          else
-            puts "#{next_player} - You are in check!"
           end
         end
 
@@ -73,16 +78,6 @@ class Game
       raise InvalidMoveError.new("Error - Starting square does not contain a piece.")
     elsif @board[start_pos].color != @current_player.color
       raise InvalidMoveError.new("Error - Cannot move your opponent's piece.")
-    end
-  end
-
-  def checkmate?(player)
-    color = player.color
-    player_pieces = @board.all_pieces.select { |piece| piece.color == color }
-
-    player_pieces.all? do |piece|
-      possible_moves = piece.build_move_list
-      possible_moves.all? {|pos| piece.move_puts_own_king_in_check?(pos) }
     end
   end
 

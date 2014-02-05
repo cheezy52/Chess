@@ -72,6 +72,7 @@ class Board
     end
     string += "  a b c d e f g h\n"
     string += " #{@game.white_player} - #{dead_pieces(:b).join(" ")}\n"
+    string += in_check_display
     string.encode('utf-8')
   end
 
@@ -89,6 +90,27 @@ class Board
     self.graveyard.select { |piece| piece.color == color }
   end
 
+  def in_check_display
+    [:w, :b].each do |color|
+      if in_check?(color)
+        if checkmate?(color)
+          return "#{color == :b ? "White" : "Black"} checkmates #{color == :w ? "White" : "Black"}!\n"
+        else
+          return "#{color == :w ? "White" : "Black"} is in check!\n"
+        end
+      end
+    end
+    ""
+  end
+
+  def checkmate?(color)
+    player_pieces = self.all_pieces.select { |piece| piece.color == color }
+
+    player_pieces.all? do |piece|
+      possible_moves = piece.build_move_list
+      possible_moves.all? {|pos| piece.move_puts_own_king_in_check?(pos) }
+    end
+  end
 
   def on_board?(pos)
     x, y = pos

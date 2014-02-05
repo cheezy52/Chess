@@ -63,11 +63,7 @@ class King < SteppingPiece
   end
 end
 
-# to do
-# implemented as steppingpiece FOR TESTING ONLY - full functionality todo
-#class Pawn
 class Pawn < Piece
-
   def build_move_list
     move_dir = self.color == :w ? -1 : 1
     valid_moves = []

@@ -27,7 +27,6 @@ class Player
   end
 
   def valid_input?(pos)
-    # maybe make this prettier
     pos.class == Array &&
       pos.length == 2 &&
       pos.all? {|coord| coord.class == Fixnum } &&
@@ -35,9 +34,6 @@ class Player
   end
 
   def parse_input(input)
-    # get passed in a raw string from gets.chomp
-    # should be of format "a5", "e2", etc.
-    # decode to two-element array of indices on board
     throw(:forfeit, self) if input == "forfeit"
     raise InvalidInputError.new("Error - Input should be exactly two characters.") if input.length != 2
     col_hash = {"a" => 0, "b" => 1, "c" => 2, "d" => 3, "e" => 4, "f" => 5, "g" => 6, "h" => 7}
