@@ -4,6 +4,8 @@ require_relative "piece"
 require_relative "sliding_piece"
 require_relative "stepping_piece"
 require_relative "pieces"
+require_relative "errors"
+require "colorize"
 
 
 class Game
@@ -31,9 +33,11 @@ class Game
         start_pos, end_pos = @current_player.play_turn
         validate_start_pos(start_pos)
         @board[start_pos].move(end_pos)
-      rescue => e
-        p "ERROR - please retry"
-        p e
+      rescue InvalidInputError => e
+        puts e
+        retry
+      rescue InvalidMoveError => e
+        puts e
         retry
       end
       # need to implement FORFEIT function
@@ -42,18 +46,18 @@ class Game
     puts "Game over!"
   end
 
-  def valid_start_pos?(start_pos)
+  def validate_start_pos(start_pos)
     if @board[start_pos].nil?
-      raise ArgumentError.new("That's an empty space.")
+      raise InvalidMoveError.new("Error - Starting square does not contain a piece.")
     elsif @board[start_pos].color != @current_player.color
-      raise ArgumentError.new("That's not your piece.")
+      raise InvalidMoveError.new("Error - Cannot move your opponent's piece.")
     end
   end
 
   def over?
-    #if checkmate, yes
-    #if player forfeits, yes
-    #if only the two kings are left on the board, yes
+    # if checkmate, yes
+    # if player forfeits, yes
+    # if only the two kings are left on the board, yes
     false
   end
 end

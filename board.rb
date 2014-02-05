@@ -88,7 +88,7 @@ class Board
       string += " #{index+1}\n"
     end
     string += "  a b c d e f g h\n"
-    print string.encode('utf-8')
+    string.encode('utf-8')
   end
 
   def all_pieces

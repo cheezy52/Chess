@@ -2,13 +2,6 @@ class SlidingPiece < Piece
   HORIZ = [[1, 0], [0, 1], [-1, 0], [0, -1]]
   DIAG = [[1, 1], [1, -1], [-1, -1], [-1, 1]]
 
-  def valid_move?(target_pos)
-    # check horiz / diag positions
-    on_board?(pos)
-    move_list = self.build_move_list
-    move_list.include?(target_pos)
-    #super
-  end
 
   def build_move_list
     move_list = []

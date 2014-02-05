@@ -1,16 +1,4 @@
 class SteppingPiece < Piece
-  #OFFSETS = [[]]
-  def valid_move?(target_pos)
-    # check horiz / diag positions
-    on_board?(pos)
-    move_list = self.build_move_list
-    move_list.include?(target_pos)
-    #super
-  end
-
-  def move_dirs
-    [[0,0]]
-  end
 
   def build_move_list
     move_list = []

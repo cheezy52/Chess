@@ -18,10 +18,7 @@ class Player
     begin
       puts message
       pos = parse_input(gets.chomp)
-      raise ArgumentError.new("Input invalid.  Please re-enter.") unless valid_input?(pos)
-    rescue ArgumentError => e
-      puts e
-      retry
+      raise InvalidInputError.new("Error - Cannot parse input coordinates.") unless valid_input?(pos)
     end
     pos
   end
@@ -35,10 +32,10 @@ class Player
   end
 
   def parse_input(input)
-    #get passed in a raw string from gets.chomp
-    #should be of format "a5", "e2", etc.
-    #decode to two-element array of indices on board
-    raise ArgumentError.new("Please enter a valid square.") if input.length != 2
+    # get passed in a raw string from gets.chomp
+    # should be of format "a5", "e2", etc.
+    # decode to two-element array of indices on board
+    raise InvalidInputError.new("Error - Input should be exactly two characters.") if input.length != 2
     col_hash = {"a" => 0, "b" => 1, "c" => 2, "d" => 3, "e" => 4, "f" => 5, "g" => 6, "h" => 7}
     col, row = input.split("")
     row = row.to_i
