@@ -1,10 +1,11 @@
 class Player
-  attr_accessor :color, :board, :game
+  attr_accessor :color, :board, :game, :captured_pieces
   attr_reader :name
 
   def initialize(name)
     @name = name
     @game, @board, @color = nil, nil, nil
+    @captured_pieces = []
   end
 
   def play_turn
@@ -42,7 +43,7 @@ class Player
     col_hash = {"a" => 0, "b" => 1, "c" => 2, "d" => 3, "e" => 4, "f" => 5, "g" => 6, "h" => 7}
     col, row = input.split("")
     row = row.to_i
-    [row - 1, col_hash[col]]
+    [8 - row, col_hash[col]]
   end
 
 end

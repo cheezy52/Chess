@@ -22,9 +22,10 @@ class Piece
 
   def capture_piece(pos)
     puts "#{self} captures #{@board[pos]}"
-    captured_piece = @board[pos]
+    captured_piece = @board[pos].dup
     @board[pos] = nil
-    captured_piece
+
+    board.graveyard << captured_piece
   end
 
   def valid_move?(target_pos)

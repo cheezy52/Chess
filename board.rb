@@ -4,12 +4,13 @@ class Board
 
   SETUP = [Rook, Knight, Bishop, Queen, King, Bishop, Knight, Rook]
 
-  attr_accessor :grid
+  attr_accessor :grid, :graveyard
 
   def initialize(game, populated = true)
     @game = game
     @grid = build_empty_board
     build_starting_board if populated
+    @graveyard = []
   end
 
   def [](pos)
@@ -53,9 +54,10 @@ class Board
   def to_s
     string = ""
     tile_color = :red
+    string += " #{@game.black_player} - #{dead_pieces(:w).join(" ")}\n"
     string += "  a b c d e f g h\n"
     @grid.each_with_index do |row, index|
-      string += "#{index+1} "
+      string += "#{8 - index} "
       tile_color = (tile_color == :yellow ? :red : :yellow )
       row.each do |tile|
         if tile
@@ -66,9 +68,10 @@ class Board
         tile_color = (tile_color == :yellow ? :red : :yellow )
       end
 
-      string += " #{index+1}\n"
+      string += " #{8 - index}\n"
     end
     string += "  a b c d e f g h\n"
+    string += " #{@game.white_player} - #{dead_pieces(:b).join(" ")}\n"
     string.encode('utf-8')
   end
 
@@ -81,6 +84,11 @@ class Board
     end
     pieces
   end
+
+  def dead_pieces(color)
+    self.graveyard.select { |piece| piece.color == color }
+  end
+
 
   def on_board?(pos)
     x, y = pos

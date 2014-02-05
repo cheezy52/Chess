@@ -10,7 +10,7 @@ require "colorize"
 #TODO: Victory/draw conditions
 class Game
 
-  attr_reader :board
+  attr_reader :board, :white_player, :black_player, :current_player
 
   def initialize(white_player, black_player)
     @board = Board.new(self)
@@ -29,10 +29,12 @@ class Game
 
   def play
     forfeit = catch(:forfeit) do
+      puts @board
+
       until over?
         begin
           next_player = (@current_player == @white_player ? @black_player : @white_player)
-          puts @board
+
           start_pos, end_pos = @current_player.play_turn
           validate_start_pos(start_pos)
           @board[start_pos].move(end_pos)
@@ -44,6 +46,8 @@ class Game
           retry
         end
 
+        puts @board
+
         if @board.in_check?(next_player.color)
           if checkmate?(next_player)
             @winner = @current_player
@@ -52,6 +56,7 @@ class Game
             puts "#{next_player} - You are in check!"
           end
         end
+
         @current_player = next_player
       end
     end
@@ -60,7 +65,6 @@ class Game
       @winner = (forfeit == @white_player ? @black_player : @white_player)
     end
 
-    puts @board
     puts "Game over - #{@winner} is the winner!"
   end
 
