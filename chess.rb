@@ -17,6 +17,7 @@ class Game
     @white_player = associate_player(white_player, :w)
     @black_player = associate_player(black_player, :b)
     @current_player = @white_player
+    @winner = nil
   end
 
   def associate_player(player, color)
@@ -27,23 +28,32 @@ class Game
   end
 
   def play
-    until over?
-      begin
-        puts @board
-        start_pos, end_pos = @current_player.play_turn
-        validate_start_pos(start_pos)
-        @board[start_pos].move(end_pos)
-      rescue InvalidInputError => e
-        puts e
-        retry
-      rescue InvalidMoveError => e
-        puts e
-        retry
+    forfeit = catch(:forfeit) do
+      until over?
+        begin
+          puts @board
+          start_pos, end_pos = @current_player.play_turn
+          validate_start_pos(start_pos)
+          @board[start_pos].move(end_pos)
+        rescue InvalidInputError => e
+          puts e
+          retry
+        rescue InvalidMoveError => e
+          puts e
+          retry
+        end
+        # need to implement FORFEIT function
+        @current_player = (@current_player == @white_player ? @black_player : @white_player)
       end
-      # need to implement FORFEIT function
-      @current_player = (@current_player == @white_player ? @black_player : @white_player)
     end
-    puts "Game over!"
+    if forfeit
+      @winner = (forfeit == @white_player ? @black_player : @white_player)
+    end
+
+    puts "Game over! #{@winner} is the winner!"
+
+    #winner-detection logic goes here
+    #if we don't catch a game-over due to checkmate or draw, it was due to forfeit and current player loses
   end
 
   def validate_start_pos(start_pos)
