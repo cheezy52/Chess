@@ -6,6 +6,7 @@ class Piece
     @board = board
     @color = color
     @pos = pos
+    @unmoved = true
   end
 
   def move(target_pos)
@@ -15,6 +16,7 @@ class Piece
       self.pos = target_pos
     else raise InvalidMoveError.new("Error - This is not a valid move for #{self}.")
     end
+    @unmoved = false
     nil
   end
 

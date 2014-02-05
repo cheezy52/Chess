@@ -7,7 +7,7 @@ require_relative "player"
 require_relative "errors"
 require "colorize"
 
-
+#TODO: Victory/draw conditions
 class Game
 
   attr_reader :board
