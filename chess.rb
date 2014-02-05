@@ -6,6 +6,7 @@ require_relative "board"
 require_relative "player"
 require_relative "errors"
 require "colorize"
+require "yaml"
 
 # TODO:
 # draw conditions
@@ -17,16 +18,16 @@ require "colorize"
 
 class Game
 
-  attr_reader :board, :white_player, :black_player, :current_player
+  attr_reader :board, :white_player, :black_player, :current_player, :winner, :move_history
 
-  def initialize(white_player, black_player)
+  def initialize#(white_player, black_player)
     @board = Board.new(self)
-    @white_player = associate_player(white_player, :w)
-    @black_player = associate_player(black_player, :b)
-    @current_player = @white_player
     @winner = nil
     @move_history = [@board.dup]
     new_or_load
+    #@white_player = associate_player(white_player, :w)
+    #@black_player = associate_player(black_player, :b)
+    #@current_player = @white_player
   end
 
   def associate_player(player, color)
@@ -73,6 +74,9 @@ class Game
       end
 
       puts "Game over - #{@winner} is the winner!"
+
+      puts "Would you like to save the replay of this game?  (y/n)"
+      save = (gets.chomp.upcase == 'Y')
     end
 
     if save
@@ -95,33 +99,79 @@ class Game
   def new_or_load
     # start new game? or load previous game?
     # if start new - self.play
+    puts "Would you like to load a previous game? (y/n)"
+    choice = gets.chomp.upcase
+    if choice == "Y"
+      load_game
+    else
+      get_players
+      play
+    end
+    nil
+  end
+
+  def get_players
+    puts "Player 1 (White), please enter your name: "
+    @white_player = associate_player(Player.new(gets.chomp), :w)
+    puts "Player 2 (Black), please enter your name: "
+    @black_player = associate_player(Player.new(gets.chomp), :b)
+    @current_player = @white_player
+  end
+
+  def replay
+    puts "Press Enter to see next move.".yellow
+    @move_history.each do |board_state|
+      puts board_state
+      gets.chomp
+    end
+    nil
   end
 
   def save_game
+    game_name = ""
     begin
       puts "Please enter a name for this game. (Press enter for default.)"
       game_name = gets.chomp
-      if game_name.match(/[^\w]/).nil?
+      if !game_name.match(/[^\w]/).nil?
         raise InvalidInputError.new("Error - Please use only alphanumeric characters and underscores.")
       end
     rescue InvalidInputError => e
       puts e
       retry
-
-      game_name = "chess_game" if game_name == ""
-
-      File.open("#{game_name}_#{Time.now}.txt", "w") { self.to_yaml }
     end
+    game_name = "chess_game" if game_name == ""
+    File.open("saves/#{game_name}_#{Time.now.strftime "%Y%m%d_%H%M%S"}.txt", "w") { |line| line.puts self.to_yaml }
+  end
 
+  def get_saved_games
+    saves = {}
+    filenames = Dir.entries("saves").select { |file| !File.directory?(file) }
+    i = 1
+    filenames.each { |filename| saves[i] = filename; i += 1 }
+    saves
   end
 
   def load_game
+    game_name = ""
+    saves = get_saved_games
+    number = nil
+    begin
+      saves.each { |num, filename| puts "#{num}. #{filename}" }
+
+      puts nil
+      puts "Please enter the number of the save file you would like to load:"
+      number = gets.chomp.to_i
+      raise InvalidInputError.new("Error - there is not a save file at that number.") if saves[number].nil?
+    rescue InvalidInputError => e
+      puts e
+      retry
+    end
+
+    loaded_game = YAML::load(File.open("saves/#{saves[number]}", "r") { |f| f.read })
+    loaded_game.over? ? loaded_game.replay : loaded_game.play
   end
 end
 
 if __FILE__ == $PROGRAM_NAME
-  p1 = Player.new("Alice")
-  p2 = Player.new("Bob")
-  g = Game.new(p1, p2)
-  g.play
+  Game.new
 end

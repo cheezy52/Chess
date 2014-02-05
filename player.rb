@@ -35,6 +35,7 @@ class Player
 
   def parse_input(input)
     throw(:forfeit, self) if input == "forfeit"
+    throw(:save, true) if input == "save"
     raise InvalidInputError.new("Error - Input should be exactly two characters.") if input.length != 2
     col_hash = {"a" => 0, "b" => 1, "c" => 2, "d" => 3, "e" => 4, "f" => 5, "g" => 6, "h" => 7}
     col, row = input.split("")

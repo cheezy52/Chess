@@ -1,4 +1,5 @@
 class Bishop < SlidingPiece
+  VALUE = 3
   def move_dirs
     DIAG
   end
@@ -6,13 +7,10 @@ class Bishop < SlidingPiece
   def to_s
     self.color == :w ? "\u2657" : "\u265D"
   end
-
-  def value
-    3
-  end
 end
 
 class Rook < SlidingPiece
+  VALUE = 5
   def move_dirs
     HORIZ
   end
@@ -20,13 +18,10 @@ class Rook < SlidingPiece
   def to_s
     self.color == :w ? "\u2656" : "\u265C"
   end
-
-  def value
-    5
-  end
 end
 
 class Queen < SlidingPiece
+  VALUE = 9
   def move_dirs
     DIAG + HORIZ
   end
@@ -34,14 +29,10 @@ class Queen < SlidingPiece
   def to_s
     self.color == :w ? "\u2655" : "\u265B"
   end
-
-  def value
-    9
-  end
 end
 
 class Knight < SteppingPiece
-
+  VALUE = 3
   def move_dirs
     [[2, 1], [-2, 1], [2, -1], [-2, -1], [1, 2], [-1, 2], [1, -2], [-1, -2]]
   end
@@ -49,14 +40,10 @@ class Knight < SteppingPiece
   def to_s
     self.color == :w ? "\u2658" : "\u265E"
   end
-
-  def value
-    3
-  end
 end
 
 class King < SteppingPiece
-
+  VALUE = 40
   def move_dirs
     [[1, 1], [1, 0], [1, -1], [0, 1], [0, -1], [-1, 1], [-1, 0], [-1, -1]]
   end
@@ -77,13 +64,10 @@ class King < SteppingPiece
   def to_s
     self.color == :w ? "\u2654" : "\u265A"
   end
-
-  def value
-    40
-  end
 end
 
 class Pawn < Piece
+  VALUE = 1
   def build_move_list
     move_dir = self.color == :w ? -1 : 1
     valid_moves = []
@@ -105,10 +89,6 @@ class Pawn < Piece
 
   def to_s
     self.color == :w ? "\u2659" : "\u265F"
-  end
-
-  def value
-    1
   end
 end
 
