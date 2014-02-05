@@ -10,6 +10,7 @@ require "colorize"
 # TODO:
 # draw conditions
 # movement special cases: en passant, castling, pawn promotion
+# piece value
 # computer player
 # save / load; replays?
 # source code cleanup - finish splitting classes, decomposition, line-tightening, privatization

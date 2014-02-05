@@ -6,6 +6,10 @@ class Bishop < SlidingPiece
   def to_s
     self.color == :w ? "\u2657" : "\u265D"
   end
+
+  def value
+    3
+  end
 end
 
 class Rook < SlidingPiece
@@ -15,6 +19,10 @@ class Rook < SlidingPiece
 
   def to_s
     self.color == :w ? "\u2656" : "\u265C"
+  end
+
+  def value
+    5
   end
 end
 
@@ -26,6 +34,10 @@ class Queen < SlidingPiece
   def to_s
     self.color == :w ? "\u2655" : "\u265B"
   end
+
+  def value
+    9
+  end
 end
 
 class Knight < SteppingPiece
@@ -36,6 +48,10 @@ class Knight < SteppingPiece
 
   def to_s
     self.color == :w ? "\u2658" : "\u265E"
+  end
+
+  def value
+    3
   end
 end
 
@@ -61,6 +77,10 @@ class King < SteppingPiece
   def to_s
     self.color == :w ? "\u2654" : "\u265A"
   end
+
+  def value
+    40
+  end
 end
 
 class Pawn < Piece
@@ -85,6 +105,10 @@ class Pawn < Piece
 
   def to_s
     self.color == :w ? "\u2659" : "\u265F"
+  end
+
+  def value
+    1
   end
 end
 
