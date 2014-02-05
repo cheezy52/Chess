@@ -31,6 +31,7 @@ class Game
     forfeit = catch(:forfeit) do
       until over?
         begin
+          next_player = (@current_player == @white_player ? @black_player : @white_player)
           puts @board
           start_pos, end_pos = @current_player.play_turn
           validate_start_pos(start_pos)
@@ -42,17 +43,25 @@ class Game
           puts e
           retry
         end
-        @current_player = (@current_player == @white_player ? @black_player : @white_player)
+
+        if @board.in_check?(next_player.color)
+          if checkmate?(next_player)
+            @winner = @current_player
+            puts "Checkmate! Good work, #{@current_player}."
+          else
+            puts "#{next_player} - You are in check!"
+          end
+        end
+        @current_player = next_player
       end
     end
+
     if forfeit
       @winner = (forfeit == @white_player ? @black_player : @white_player)
     end
 
-    puts "Game over! #{@winner} is the winner!"
-
-    #winner-detection logic goes here
-    #if we don't catch a game-over due to checkmate or draw, it was due to forfeit and current player loses
+    puts @board
+    puts "Game over - #{@winner} is the winner!"
   end
 
   def validate_start_pos(start_pos)
@@ -63,12 +72,20 @@ class Game
     end
   end
 
-  def over?
-    # if checkmate, yes
-    # if player forfeits, yes
-    # if only the two kings are left on the board, yes
-    false
+  def checkmate?(player)
+    color = player.color
+    player_pieces = @board.all_pieces.select { |piece| piece.color == color }
+
+    player_pieces.all? do |piece|
+      possible_moves = piece.build_move_list
+      possible_moves.all? {|pos| piece.move_puts_own_king_in_check?(pos) }
+    end
   end
+
+  def over?
+    !@winner.nil?
+  end
+
 end
 
 if __FILE__ == $PROGRAM_NAME

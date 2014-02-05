@@ -30,11 +30,21 @@ class Piece
   def valid_move?(target_pos)
     friendly_piece_error = InvalidMoveError.new("Error - Cannot move to position containing friendly piece.")
     off_board_error = InvalidMoveError.new("Error - Specified position is not on board.")
+    in_check_error = InvalidMoveError.new("Error - Move would put self in check.")
     raise friendly_piece_error if friendly_piece?(@board[target_pos])
     raise off_board_error if !@board.on_board?(target_pos)
 
     move_list = self.build_move_list
-    move_list.include?(target_pos)
+    possible_move = move_list.include?(target_pos)
+    raise in_check_error if possible_move && move_puts_own_king_in_check?(target_pos)
+    possible_move
+  end
+
+  def move_puts_own_king_in_check?(target_pos)
+    temp_board = @board.dup
+    temp_board[self.pos], temp_board[target_pos] = nil, temp_board[self.pos]
+    temp_board[target_pos].pos = target_pos
+    temp_board.in_check?(self.color)
   end
 
   def on_board?(pos)

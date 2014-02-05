@@ -8,6 +8,7 @@ class Player
   end
 
   def play_turn
+    puts "It it #{@name}'s turn (#{@color == :w ? "White" : "Black"}.)"
     start_pos = get_pos("Please enter the square (e.g. a5, e2) of the piece you would like to move:")
     end_pos = get_pos("Please enter the square you would like to move to:")
     [start_pos, end_pos]

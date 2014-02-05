@@ -34,14 +34,14 @@ class Board
   end
 
   def dup
-    new_grid = build_empty_board
+    new_board = Board.new(@game, false)
     @grid.each_with_index do |row, row_index|
       row.each_with_index do |tile, col_index|
-        new_grid[row_index][col_index] = tile.dup unless tile.nil?
+        unless tile.nil?
+          new_board.add_piece(tile.class, tile.color, tile.pos.dup)
+        end
       end
     end
-    new_board = Board.new(@game, false)
-    new_board.grid = new_grid
     new_board
   end
 
