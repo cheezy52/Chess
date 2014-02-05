@@ -12,7 +12,6 @@ require "yaml"
 # draw conditions
 # movement special cases: en passant, castling, pawn promotion
 # computer player
-# save / load; replays?
 # source code cleanup - finish splitting classes, decomposition, line-tightening, privatization
 # general UI improvements
 
@@ -25,9 +24,6 @@ class Game
     @winner = nil
     @move_history = [@board.dup]
     new_or_load
-    #@white_player = associate_player(white_player, :w)
-    #@black_player = associate_player(black_player, :b)
-    #@current_player = @white_player
   end
 
   def associate_player(player, color)
@@ -49,6 +45,7 @@ class Game
             start_pos, end_pos = @current_player.play_turn
             validate_start_pos(start_pos)
             @board[start_pos].move(end_pos)
+            @move_history << @board.dup
           rescue InvalidInputError => e
             puts e
             retry
@@ -71,6 +68,7 @@ class Game
 
       if forfeit
         @winner = (forfeit == @white_player ? @black_player : @white_player)
+        @move_history << "#{forfeit} forfeits the game!"
       end
 
       puts "Game over - #{@winner} is the winner!"
