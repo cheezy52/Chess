@@ -14,6 +14,9 @@ class Piece
       capture_piece(target_pos) if @board[target_pos]
       @board[pos], @board[target_pos] = nil, self
       self.pos = target_pos
+      if self.class == Pawn && self.ok_to_promote?
+        @board.promote(self)
+      end
     else raise InvalidMoveError.new("Error - This is not a valid move for #{self}.")
     end
     @unmoved = false
@@ -21,7 +24,7 @@ class Piece
   end
 
   def capture_piece(pos)
-    puts "#{self} captures #{@board[pos]}"
+    puts "#{self}  captures #{@board[pos]}"
     captured_piece = @board[pos].dup
     @board[pos] = nil
 

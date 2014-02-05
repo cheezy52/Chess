@@ -87,6 +87,10 @@ class Pawn < Piece
     valid_moves
   end
 
+  def ok_to_promote?
+    self.pos[0] == 0 || self.pos[0] == 7
+  end
+
   def to_s
     self.color == :w ? "\u2659" : "\u265F"
   end

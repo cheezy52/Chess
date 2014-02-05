@@ -46,6 +46,12 @@ class Board
     new_board
   end
 
+  def promote(pawn)
+    self[pawn.pos] = nil
+    piece_type = @game.current_player.promote_pawn
+    self.add_piece(piece_type, @game.current_player.color, pawn.pos)
+  end
+
   def add_piece(type, color, pos)
     row, col = pos
     @grid[row][col] = type.new(self, color, pos)

@@ -43,4 +43,18 @@ class Player
     [8 - row, col_hash[col]]
   end
 
+  def promote_pawn
+    pieces = {"PAWN" => Pawn, "BISHOP" => Bishop, "KNIGHT" => Knight, "ROOK" => Rook, "QUEEN" => Queen}
+    selection = ""
+    begin
+      puts "What piece would you like to promote your pawn to?"
+      selection = gets.chomp.upcase
+      raise InvalidInputError.new("Error - That is not a valid piece.") unless pieces.keys.include?(selection)
+    rescue InvalidInputError => e
+      puts e
+      retry
+    end
+    pieces[selection]
+  end
+
 end

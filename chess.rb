@@ -13,13 +13,14 @@ require "yaml"
 # movement special cases: en passant, castling, pawn promotion
 # computer player
 # source code cleanup - finish splitting classes, decomposition, line-tightening, privatization
+# split up Game class into Chess (load / save) / Game (play / replay) classes
 # general UI improvements
 
 class Game
 
   attr_reader :board, :white_player, :black_player, :current_player, :winner, :move_history
 
-  def initialize#(white_player, black_player)
+  def initialize
     @board = Board.new(self)
     @winner = nil
     @move_history = [@board.dup]
