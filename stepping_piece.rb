@@ -18,4 +18,3 @@ class SteppingPiece < Piece
   end
 
 end
-

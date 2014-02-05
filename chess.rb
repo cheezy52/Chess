@@ -1,7 +1,12 @@
 require_relative "piece"
 require_relative "sliding_piece"
 require_relative "stepping_piece"
-require_relative "pieces"
+require_relative "pawn"
+require_relative "rook"
+require_relative "king"
+require_relative "queen"
+require_relative "bishop"
+require_relative "knight"
 require_relative "board"
 require_relative "player"
 require_relative "errors"
@@ -10,9 +15,9 @@ require "yaml"
 
 # TODO:
 # draw conditions
-# movement special cases: en passant, castling, pawn promotion
+# movement special cases: en passant, castling
 # computer player
-# source code cleanup - finish splitting classes, decomposition, line-tightening, privatization
+# source code cleanup - decomposition, line-tightening, privatization
 # split up Game class into Chess (load / save) / Game (play / replay) classes
 # general UI improvements
 
