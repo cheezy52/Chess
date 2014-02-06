@@ -1,0 +1,2096 @@
+--- &70124367378020 !ruby/object:Game
+board: &70124367377900 !ruby/object:Board
+  game: *70124367378020
+  grid:
+  - - !ruby/object:Rook
+      board: *70124367377900
+      color: :b
+      pos:
+      - 0
+      - 0
+      unmoved: true
+    - 
+    - !ruby/object:Bishop
+      board: *70124367377900
+      color: :b
+      pos:
+      - 0
+      - 2
+      unmoved: true
+    - 
+    - !ruby/object:King
+      board: *70124367377900
+      color: :b
+      pos:
+      - 0
+      - 4
+      unmoved: true
+    - !ruby/object:Bishop
+      board: *70124367377900
+      color: :b
+      pos:
+      - 0
+      - 5
+      unmoved: true
+    - !ruby/object:Knight
+      board: *70124367377900
+      color: :b
+      pos:
+      - 0
+      - 6
+      unmoved: true
+    - !ruby/object:Rook
+      board: *70124367377900
+      color: :b
+      pos:
+      - 0
+      - 7
+      unmoved: true
+  - - !ruby/object:Pawn
+      board: *70124367377900
+      color: :b
+      pos:
+      - 1
+      - 0
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124367377900
+      color: :b
+      pos:
+      - 1
+      - 1
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124367377900
+      color: :b
+      pos:
+      - 1
+      - 2
+      unmoved: true
+    - 
+    - !ruby/object:Pawn
+      board: *70124367377900
+      color: :b
+      pos:
+      - 1
+      - 4
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124367377900
+      color: :b
+      pos:
+      - 1
+      - 5
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124367377900
+      color: :b
+      pos:
+      - 1
+      - 6
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124367377900
+      color: :b
+      pos:
+      - 1
+      - 7
+      unmoved: true
+  - - 
+    - 
+    - !ruby/object:Knight
+      board: *70124367377900
+      color: :b
+      pos:
+      - 2
+      - 2
+      unmoved: false
+    - !ruby/object:Queen
+      board: *70124367377900
+      color: :b
+      pos:
+      - 2
+      - 3
+      unmoved: false
+    - 
+    - 
+    - 
+    - 
+  - - 
+    - 
+    - 
+    - !ruby/object:Pawn
+      board: *70124367377900
+      color: :b
+      pos:
+      - 3
+      - 3
+      unmoved: false
+    - 
+    - 
+    - 
+    - 
+  - - 
+    - 
+    - 
+    - 
+    - !ruby/object:Pawn
+      board: *70124367377900
+      color: :w
+      pos:
+      - 4
+      - 4
+      unmoved: false
+    - 
+    - 
+    - 
+  - - 
+    - 
+    - 
+    - !ruby/object:Bishop
+      board: *70124367377900
+      color: :w
+      pos:
+      - 5
+      - 3
+      unmoved: false
+    - 
+    - !ruby/object:Knight
+      board: *70124367377900
+      color: :w
+      pos:
+      - 5
+      - 5
+      unmoved: false
+    - 
+    - 
+  - - !ruby/object:Pawn
+      board: *70124367377900
+      color: :w
+      pos:
+      - 6
+      - 0
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124367377900
+      color: :w
+      pos:
+      - 6
+      - 1
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124367377900
+      color: :w
+      pos:
+      - 6
+      - 2
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124367377900
+      color: :w
+      pos:
+      - 6
+      - 3
+      unmoved: true
+    - 
+    - !ruby/object:Pawn
+      board: *70124367377900
+      color: :w
+      pos:
+      - 6
+      - 5
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124367377900
+      color: :w
+      pos:
+      - 6
+      - 6
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124367377900
+      color: :w
+      pos:
+      - 6
+      - 7
+      unmoved: true
+  - - !ruby/object:Rook
+      board: *70124367377900
+      color: :w
+      pos:
+      - 7
+      - 0
+      unmoved: true
+    - !ruby/object:Knight
+      board: *70124367377900
+      color: :w
+      pos:
+      - 7
+      - 1
+      unmoved: true
+    - !ruby/object:Bishop
+      board: *70124367377900
+      color: :w
+      pos:
+      - 7
+      - 2
+      unmoved: true
+    - !ruby/object:Queen
+      board: *70124367377900
+      color: :w
+      pos:
+      - 7
+      - 3
+      unmoved: true
+    - !ruby/object:King
+      board: *70124367377900
+      color: :w
+      pos:
+      - 7
+      - 4
+      unmoved: true
+    - 
+    - 
+    - !ruby/object:Rook
+      board: *70124367377900
+      color: :w
+      pos:
+      - 7
+      - 7
+      unmoved: true
+  graveyard: []
+winner: 
+move_history:
+- &70124367793640 !ruby/object:Board
+  game: *70124367378020
+  grid:
+  - - !ruby/object:Rook
+      board: *70124367793640
+      color: :b
+      pos:
+      - 0
+      - 0
+      unmoved: true
+    - !ruby/object:Knight
+      board: *70124367793640
+      color: :b
+      pos:
+      - 0
+      - 1
+      unmoved: true
+    - !ruby/object:Bishop
+      board: *70124367793640
+      color: :b
+      pos:
+      - 0
+      - 2
+      unmoved: true
+    - !ruby/object:Queen
+      board: *70124367793640
+      color: :b
+      pos:
+      - 0
+      - 3
+      unmoved: true
+    - !ruby/object:King
+      board: *70124367793640
+      color: :b
+      pos:
+      - 0
+      - 4
+      unmoved: true
+    - !ruby/object:Bishop
+      board: *70124367793640
+      color: :b
+      pos:
+      - 0
+      - 5
+      unmoved: true
+    - !ruby/object:Knight
+      board: *70124367793640
+      color: :b
+      pos:
+      - 0
+      - 6
+      unmoved: true
+    - !ruby/object:Rook
+      board: *70124367793640
+      color: :b
+      pos:
+      - 0
+      - 7
+      unmoved: true
+  - - !ruby/object:Pawn
+      board: *70124367793640
+      color: :b
+      pos:
+      - 1
+      - 0
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124367793640
+      color: :b
+      pos:
+      - 1
+      - 1
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124367793640
+      color: :b
+      pos:
+      - 1
+      - 2
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124367793640
+      color: :b
+      pos:
+      - 1
+      - 3
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124367793640
+      color: :b
+      pos:
+      - 1
+      - 4
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124367793640
+      color: :b
+      pos:
+      - 1
+      - 5
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124367793640
+      color: :b
+      pos:
+      - 1
+      - 6
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124367793640
+      color: :b
+      pos:
+      - 1
+      - 7
+      unmoved: true
+  - - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+  - - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+  - - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+  - - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+  - - !ruby/object:Pawn
+      board: *70124367793640
+      color: :w
+      pos:
+      - 6
+      - 0
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124367793640
+      color: :w
+      pos:
+      - 6
+      - 1
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124367793640
+      color: :w
+      pos:
+      - 6
+      - 2
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124367793640
+      color: :w
+      pos:
+      - 6
+      - 3
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124367793640
+      color: :w
+      pos:
+      - 6
+      - 4
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124367793640
+      color: :w
+      pos:
+      - 6
+      - 5
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124367793640
+      color: :w
+      pos:
+      - 6
+      - 6
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124367793640
+      color: :w
+      pos:
+      - 6
+      - 7
+      unmoved: true
+  - - !ruby/object:Rook
+      board: *70124367793640
+      color: :w
+      pos:
+      - 7
+      - 0
+      unmoved: true
+    - !ruby/object:Knight
+      board: *70124367793640
+      color: :w
+      pos:
+      - 7
+      - 1
+      unmoved: true
+    - !ruby/object:Bishop
+      board: *70124367793640
+      color: :w
+      pos:
+      - 7
+      - 2
+      unmoved: true
+    - !ruby/object:Queen
+      board: *70124367793640
+      color: :w
+      pos:
+      - 7
+      - 3
+      unmoved: true
+    - !ruby/object:King
+      board: *70124367793640
+      color: :w
+      pos:
+      - 7
+      - 4
+      unmoved: true
+    - !ruby/object:Bishop
+      board: *70124367793640
+      color: :w
+      pos:
+      - 7
+      - 5
+      unmoved: true
+    - !ruby/object:Knight
+      board: *70124367793640
+      color: :w
+      pos:
+      - 7
+      - 6
+      unmoved: true
+    - !ruby/object:Rook
+      board: *70124367793640
+      color: :w
+      pos:
+      - 7
+      - 7
+      unmoved: true
+  graveyard: []
+- &70124354846400 !ruby/object:Board
+  game: *70124367378020
+  grid:
+  - - !ruby/object:Rook
+      board: *70124354846400
+      color: :b
+      pos:
+      - 0
+      - 0
+      unmoved: true
+    - !ruby/object:Knight
+      board: *70124354846400
+      color: :b
+      pos:
+      - 0
+      - 1
+      unmoved: true
+    - !ruby/object:Bishop
+      board: *70124354846400
+      color: :b
+      pos:
+      - 0
+      - 2
+      unmoved: true
+    - !ruby/object:Queen
+      board: *70124354846400
+      color: :b
+      pos:
+      - 0
+      - 3
+      unmoved: true
+    - !ruby/object:King
+      board: *70124354846400
+      color: :b
+      pos:
+      - 0
+      - 4
+      unmoved: true
+    - !ruby/object:Bishop
+      board: *70124354846400
+      color: :b
+      pos:
+      - 0
+      - 5
+      unmoved: true
+    - !ruby/object:Knight
+      board: *70124354846400
+      color: :b
+      pos:
+      - 0
+      - 6
+      unmoved: true
+    - !ruby/object:Rook
+      board: *70124354846400
+      color: :b
+      pos:
+      - 0
+      - 7
+      unmoved: true
+  - - !ruby/object:Pawn
+      board: *70124354846400
+      color: :b
+      pos:
+      - 1
+      - 0
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124354846400
+      color: :b
+      pos:
+      - 1
+      - 1
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124354846400
+      color: :b
+      pos:
+      - 1
+      - 2
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124354846400
+      color: :b
+      pos:
+      - 1
+      - 3
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124354846400
+      color: :b
+      pos:
+      - 1
+      - 4
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124354846400
+      color: :b
+      pos:
+      - 1
+      - 5
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124354846400
+      color: :b
+      pos:
+      - 1
+      - 6
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124354846400
+      color: :b
+      pos:
+      - 1
+      - 7
+      unmoved: true
+  - - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+  - - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+  - - 
+    - 
+    - 
+    - 
+    - !ruby/object:Pawn
+      board: *70124354846400
+      color: :w
+      pos:
+      - 4
+      - 4
+      unmoved: true
+    - 
+    - 
+    - 
+  - - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+  - - !ruby/object:Pawn
+      board: *70124354846400
+      color: :w
+      pos:
+      - 6
+      - 0
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124354846400
+      color: :w
+      pos:
+      - 6
+      - 1
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124354846400
+      color: :w
+      pos:
+      - 6
+      - 2
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124354846400
+      color: :w
+      pos:
+      - 6
+      - 3
+      unmoved: true
+    - 
+    - !ruby/object:Pawn
+      board: *70124354846400
+      color: :w
+      pos:
+      - 6
+      - 5
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124354846400
+      color: :w
+      pos:
+      - 6
+      - 6
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124354846400
+      color: :w
+      pos:
+      - 6
+      - 7
+      unmoved: true
+  - - !ruby/object:Rook
+      board: *70124354846400
+      color: :w
+      pos:
+      - 7
+      - 0
+      unmoved: true
+    - !ruby/object:Knight
+      board: *70124354846400
+      color: :w
+      pos:
+      - 7
+      - 1
+      unmoved: true
+    - !ruby/object:Bishop
+      board: *70124354846400
+      color: :w
+      pos:
+      - 7
+      - 2
+      unmoved: true
+    - !ruby/object:Queen
+      board: *70124354846400
+      color: :w
+      pos:
+      - 7
+      - 3
+      unmoved: true
+    - !ruby/object:King
+      board: *70124354846400
+      color: :w
+      pos:
+      - 7
+      - 4
+      unmoved: true
+    - !ruby/object:Bishop
+      board: *70124354846400
+      color: :w
+      pos:
+      - 7
+      - 5
+      unmoved: true
+    - !ruby/object:Knight
+      board: *70124354846400
+      color: :w
+      pos:
+      - 7
+      - 6
+      unmoved: true
+    - !ruby/object:Rook
+      board: *70124354846400
+      color: :w
+      pos:
+      - 7
+      - 7
+      unmoved: true
+  graveyard: []
+- &70124369158780 !ruby/object:Board
+  game: *70124367378020
+  grid:
+  - - !ruby/object:Rook
+      board: *70124369158780
+      color: :b
+      pos:
+      - 0
+      - 0
+      unmoved: true
+    - !ruby/object:Knight
+      board: *70124369158780
+      color: :b
+      pos:
+      - 0
+      - 1
+      unmoved: true
+    - !ruby/object:Bishop
+      board: *70124369158780
+      color: :b
+      pos:
+      - 0
+      - 2
+      unmoved: true
+    - !ruby/object:Queen
+      board: *70124369158780
+      color: :b
+      pos:
+      - 0
+      - 3
+      unmoved: true
+    - !ruby/object:King
+      board: *70124369158780
+      color: :b
+      pos:
+      - 0
+      - 4
+      unmoved: true
+    - !ruby/object:Bishop
+      board: *70124369158780
+      color: :b
+      pos:
+      - 0
+      - 5
+      unmoved: true
+    - !ruby/object:Knight
+      board: *70124369158780
+      color: :b
+      pos:
+      - 0
+      - 6
+      unmoved: true
+    - !ruby/object:Rook
+      board: *70124369158780
+      color: :b
+      pos:
+      - 0
+      - 7
+      unmoved: true
+  - - !ruby/object:Pawn
+      board: *70124369158780
+      color: :b
+      pos:
+      - 1
+      - 0
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124369158780
+      color: :b
+      pos:
+      - 1
+      - 1
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124369158780
+      color: :b
+      pos:
+      - 1
+      - 2
+      unmoved: true
+    - 
+    - !ruby/object:Pawn
+      board: *70124369158780
+      color: :b
+      pos:
+      - 1
+      - 4
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124369158780
+      color: :b
+      pos:
+      - 1
+      - 5
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124369158780
+      color: :b
+      pos:
+      - 1
+      - 6
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124369158780
+      color: :b
+      pos:
+      - 1
+      - 7
+      unmoved: true
+  - - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+  - - 
+    - 
+    - 
+    - !ruby/object:Pawn
+      board: *70124369158780
+      color: :b
+      pos:
+      - 3
+      - 3
+      unmoved: true
+    - 
+    - 
+    - 
+    - 
+  - - 
+    - 
+    - 
+    - 
+    - !ruby/object:Pawn
+      board: *70124369158780
+      color: :w
+      pos:
+      - 4
+      - 4
+      unmoved: true
+    - 
+    - 
+    - 
+  - - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+  - - !ruby/object:Pawn
+      board: *70124369158780
+      color: :w
+      pos:
+      - 6
+      - 0
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124369158780
+      color: :w
+      pos:
+      - 6
+      - 1
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124369158780
+      color: :w
+      pos:
+      - 6
+      - 2
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124369158780
+      color: :w
+      pos:
+      - 6
+      - 3
+      unmoved: true
+    - 
+    - !ruby/object:Pawn
+      board: *70124369158780
+      color: :w
+      pos:
+      - 6
+      - 5
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124369158780
+      color: :w
+      pos:
+      - 6
+      - 6
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124369158780
+      color: :w
+      pos:
+      - 6
+      - 7
+      unmoved: true
+  - - !ruby/object:Rook
+      board: *70124369158780
+      color: :w
+      pos:
+      - 7
+      - 0
+      unmoved: true
+    - !ruby/object:Knight
+      board: *70124369158780
+      color: :w
+      pos:
+      - 7
+      - 1
+      unmoved: true
+    - !ruby/object:Bishop
+      board: *70124369158780
+      color: :w
+      pos:
+      - 7
+      - 2
+      unmoved: true
+    - !ruby/object:Queen
+      board: *70124369158780
+      color: :w
+      pos:
+      - 7
+      - 3
+      unmoved: true
+    - !ruby/object:King
+      board: *70124369158780
+      color: :w
+      pos:
+      - 7
+      - 4
+      unmoved: true
+    - !ruby/object:Bishop
+      board: *70124369158780
+      color: :w
+      pos:
+      - 7
+      - 5
+      unmoved: true
+    - !ruby/object:Knight
+      board: *70124369158780
+      color: :w
+      pos:
+      - 7
+      - 6
+      unmoved: true
+    - !ruby/object:Rook
+      board: *70124369158780
+      color: :w
+      pos:
+      - 7
+      - 7
+      unmoved: true
+  graveyard: []
+- &70124368999000 !ruby/object:Board
+  game: *70124367378020
+  grid:
+  - - !ruby/object:Rook
+      board: *70124368999000
+      color: :b
+      pos:
+      - 0
+      - 0
+      unmoved: true
+    - !ruby/object:Knight
+      board: *70124368999000
+      color: :b
+      pos:
+      - 0
+      - 1
+      unmoved: true
+    - !ruby/object:Bishop
+      board: *70124368999000
+      color: :b
+      pos:
+      - 0
+      - 2
+      unmoved: true
+    - !ruby/object:Queen
+      board: *70124368999000
+      color: :b
+      pos:
+      - 0
+      - 3
+      unmoved: true
+    - !ruby/object:King
+      board: *70124368999000
+      color: :b
+      pos:
+      - 0
+      - 4
+      unmoved: true
+    - !ruby/object:Bishop
+      board: *70124368999000
+      color: :b
+      pos:
+      - 0
+      - 5
+      unmoved: true
+    - !ruby/object:Knight
+      board: *70124368999000
+      color: :b
+      pos:
+      - 0
+      - 6
+      unmoved: true
+    - !ruby/object:Rook
+      board: *70124368999000
+      color: :b
+      pos:
+      - 0
+      - 7
+      unmoved: true
+  - - !ruby/object:Pawn
+      board: *70124368999000
+      color: :b
+      pos:
+      - 1
+      - 0
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124368999000
+      color: :b
+      pos:
+      - 1
+      - 1
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124368999000
+      color: :b
+      pos:
+      - 1
+      - 2
+      unmoved: true
+    - 
+    - !ruby/object:Pawn
+      board: *70124368999000
+      color: :b
+      pos:
+      - 1
+      - 4
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124368999000
+      color: :b
+      pos:
+      - 1
+      - 5
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124368999000
+      color: :b
+      pos:
+      - 1
+      - 6
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124368999000
+      color: :b
+      pos:
+      - 1
+      - 7
+      unmoved: true
+  - - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+  - - 
+    - 
+    - 
+    - !ruby/object:Pawn
+      board: *70124368999000
+      color: :b
+      pos:
+      - 3
+      - 3
+      unmoved: true
+    - 
+    - 
+    - 
+    - 
+  - - 
+    - 
+    - 
+    - 
+    - !ruby/object:Pawn
+      board: *70124368999000
+      color: :w
+      pos:
+      - 4
+      - 4
+      unmoved: true
+    - 
+    - 
+    - 
+  - - 
+    - 
+    - 
+    - !ruby/object:Bishop
+      board: *70124368999000
+      color: :w
+      pos:
+      - 5
+      - 3
+      unmoved: true
+    - 
+    - 
+    - 
+    - 
+  - - !ruby/object:Pawn
+      board: *70124368999000
+      color: :w
+      pos:
+      - 6
+      - 0
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124368999000
+      color: :w
+      pos:
+      - 6
+      - 1
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124368999000
+      color: :w
+      pos:
+      - 6
+      - 2
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124368999000
+      color: :w
+      pos:
+      - 6
+      - 3
+      unmoved: true
+    - 
+    - !ruby/object:Pawn
+      board: *70124368999000
+      color: :w
+      pos:
+      - 6
+      - 5
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124368999000
+      color: :w
+      pos:
+      - 6
+      - 6
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124368999000
+      color: :w
+      pos:
+      - 6
+      - 7
+      unmoved: true
+  - - !ruby/object:Rook
+      board: *70124368999000
+      color: :w
+      pos:
+      - 7
+      - 0
+      unmoved: true
+    - !ruby/object:Knight
+      board: *70124368999000
+      color: :w
+      pos:
+      - 7
+      - 1
+      unmoved: true
+    - !ruby/object:Bishop
+      board: *70124368999000
+      color: :w
+      pos:
+      - 7
+      - 2
+      unmoved: true
+    - !ruby/object:Queen
+      board: *70124368999000
+      color: :w
+      pos:
+      - 7
+      - 3
+      unmoved: true
+    - !ruby/object:King
+      board: *70124368999000
+      color: :w
+      pos:
+      - 7
+      - 4
+      unmoved: true
+    - 
+    - !ruby/object:Knight
+      board: *70124368999000
+      color: :w
+      pos:
+      - 7
+      - 6
+      unmoved: true
+    - !ruby/object:Rook
+      board: *70124368999000
+      color: :w
+      pos:
+      - 7
+      - 7
+      unmoved: true
+  graveyard: []
+- &70124368681340 !ruby/object:Board
+  game: *70124367378020
+  grid:
+  - - !ruby/object:Rook
+      board: *70124368681340
+      color: :b
+      pos:
+      - 0
+      - 0
+      unmoved: true
+    - !ruby/object:Knight
+      board: *70124368681340
+      color: :b
+      pos:
+      - 0
+      - 1
+      unmoved: true
+    - !ruby/object:Bishop
+      board: *70124368681340
+      color: :b
+      pos:
+      - 0
+      - 2
+      unmoved: true
+    - 
+    - !ruby/object:King
+      board: *70124368681340
+      color: :b
+      pos:
+      - 0
+      - 4
+      unmoved: true
+    - !ruby/object:Bishop
+      board: *70124368681340
+      color: :b
+      pos:
+      - 0
+      - 5
+      unmoved: true
+    - !ruby/object:Knight
+      board: *70124368681340
+      color: :b
+      pos:
+      - 0
+      - 6
+      unmoved: true
+    - !ruby/object:Rook
+      board: *70124368681340
+      color: :b
+      pos:
+      - 0
+      - 7
+      unmoved: true
+  - - !ruby/object:Pawn
+      board: *70124368681340
+      color: :b
+      pos:
+      - 1
+      - 0
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124368681340
+      color: :b
+      pos:
+      - 1
+      - 1
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124368681340
+      color: :b
+      pos:
+      - 1
+      - 2
+      unmoved: true
+    - 
+    - !ruby/object:Pawn
+      board: *70124368681340
+      color: :b
+      pos:
+      - 1
+      - 4
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124368681340
+      color: :b
+      pos:
+      - 1
+      - 5
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124368681340
+      color: :b
+      pos:
+      - 1
+      - 6
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124368681340
+      color: :b
+      pos:
+      - 1
+      - 7
+      unmoved: true
+  - - 
+    - 
+    - 
+    - !ruby/object:Queen
+      board: *70124368681340
+      color: :b
+      pos:
+      - 2
+      - 3
+      unmoved: true
+    - 
+    - 
+    - 
+    - 
+  - - 
+    - 
+    - 
+    - !ruby/object:Pawn
+      board: *70124368681340
+      color: :b
+      pos:
+      - 3
+      - 3
+      unmoved: true
+    - 
+    - 
+    - 
+    - 
+  - - 
+    - 
+    - 
+    - 
+    - !ruby/object:Pawn
+      board: *70124368681340
+      color: :w
+      pos:
+      - 4
+      - 4
+      unmoved: true
+    - 
+    - 
+    - 
+  - - 
+    - 
+    - 
+    - !ruby/object:Bishop
+      board: *70124368681340
+      color: :w
+      pos:
+      - 5
+      - 3
+      unmoved: true
+    - 
+    - 
+    - 
+    - 
+  - - !ruby/object:Pawn
+      board: *70124368681340
+      color: :w
+      pos:
+      - 6
+      - 0
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124368681340
+      color: :w
+      pos:
+      - 6
+      - 1
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124368681340
+      color: :w
+      pos:
+      - 6
+      - 2
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124368681340
+      color: :w
+      pos:
+      - 6
+      - 3
+      unmoved: true
+    - 
+    - !ruby/object:Pawn
+      board: *70124368681340
+      color: :w
+      pos:
+      - 6
+      - 5
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124368681340
+      color: :w
+      pos:
+      - 6
+      - 6
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124368681340
+      color: :w
+      pos:
+      - 6
+      - 7
+      unmoved: true
+  - - !ruby/object:Rook
+      board: *70124368681340
+      color: :w
+      pos:
+      - 7
+      - 0
+      unmoved: true
+    - !ruby/object:Knight
+      board: *70124368681340
+      color: :w
+      pos:
+      - 7
+      - 1
+      unmoved: true
+    - !ruby/object:Bishop
+      board: *70124368681340
+      color: :w
+      pos:
+      - 7
+      - 2
+      unmoved: true
+    - !ruby/object:Queen
+      board: *70124368681340
+      color: :w
+      pos:
+      - 7
+      - 3
+      unmoved: true
+    - !ruby/object:King
+      board: *70124368681340
+      color: :w
+      pos:
+      - 7
+      - 4
+      unmoved: true
+    - 
+    - !ruby/object:Knight
+      board: *70124368681340
+      color: :w
+      pos:
+      - 7
+      - 6
+      unmoved: true
+    - !ruby/object:Rook
+      board: *70124368681340
+      color: :w
+      pos:
+      - 7
+      - 7
+      unmoved: true
+  graveyard: []
+- &70124368483240 !ruby/object:Board
+  game: *70124367378020
+  grid:
+  - - !ruby/object:Rook
+      board: *70124368483240
+      color: :b
+      pos:
+      - 0
+      - 0
+      unmoved: true
+    - !ruby/object:Knight
+      board: *70124368483240
+      color: :b
+      pos:
+      - 0
+      - 1
+      unmoved: true
+    - !ruby/object:Bishop
+      board: *70124368483240
+      color: :b
+      pos:
+      - 0
+      - 2
+      unmoved: true
+    - 
+    - !ruby/object:King
+      board: *70124368483240
+      color: :b
+      pos:
+      - 0
+      - 4
+      unmoved: true
+    - !ruby/object:Bishop
+      board: *70124368483240
+      color: :b
+      pos:
+      - 0
+      - 5
+      unmoved: true
+    - !ruby/object:Knight
+      board: *70124368483240
+      color: :b
+      pos:
+      - 0
+      - 6
+      unmoved: true
+    - !ruby/object:Rook
+      board: *70124368483240
+      color: :b
+      pos:
+      - 0
+      - 7
+      unmoved: true
+  - - !ruby/object:Pawn
+      board: *70124368483240
+      color: :b
+      pos:
+      - 1
+      - 0
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124368483240
+      color: :b
+      pos:
+      - 1
+      - 1
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124368483240
+      color: :b
+      pos:
+      - 1
+      - 2
+      unmoved: true
+    - 
+    - !ruby/object:Pawn
+      board: *70124368483240
+      color: :b
+      pos:
+      - 1
+      - 4
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124368483240
+      color: :b
+      pos:
+      - 1
+      - 5
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124368483240
+      color: :b
+      pos:
+      - 1
+      - 6
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124368483240
+      color: :b
+      pos:
+      - 1
+      - 7
+      unmoved: true
+  - - 
+    - 
+    - 
+    - !ruby/object:Queen
+      board: *70124368483240
+      color: :b
+      pos:
+      - 2
+      - 3
+      unmoved: true
+    - 
+    - 
+    - 
+    - 
+  - - 
+    - 
+    - 
+    - !ruby/object:Pawn
+      board: *70124368483240
+      color: :b
+      pos:
+      - 3
+      - 3
+      unmoved: true
+    - 
+    - 
+    - 
+    - 
+  - - 
+    - 
+    - 
+    - 
+    - !ruby/object:Pawn
+      board: *70124368483240
+      color: :w
+      pos:
+      - 4
+      - 4
+      unmoved: true
+    - 
+    - 
+    - 
+  - - 
+    - 
+    - 
+    - !ruby/object:Bishop
+      board: *70124368483240
+      color: :w
+      pos:
+      - 5
+      - 3
+      unmoved: true
+    - 
+    - !ruby/object:Knight
+      board: *70124368483240
+      color: :w
+      pos:
+      - 5
+      - 5
+      unmoved: true
+    - 
+    - 
+  - - !ruby/object:Pawn
+      board: *70124368483240
+      color: :w
+      pos:
+      - 6
+      - 0
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124368483240
+      color: :w
+      pos:
+      - 6
+      - 1
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124368483240
+      color: :w
+      pos:
+      - 6
+      - 2
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124368483240
+      color: :w
+      pos:
+      - 6
+      - 3
+      unmoved: true
+    - 
+    - !ruby/object:Pawn
+      board: *70124368483240
+      color: :w
+      pos:
+      - 6
+      - 5
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124368483240
+      color: :w
+      pos:
+      - 6
+      - 6
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124368483240
+      color: :w
+      pos:
+      - 6
+      - 7
+      unmoved: true
+  - - !ruby/object:Rook
+      board: *70124368483240
+      color: :w
+      pos:
+      - 7
+      - 0
+      unmoved: true
+    - !ruby/object:Knight
+      board: *70124368483240
+      color: :w
+      pos:
+      - 7
+      - 1
+      unmoved: true
+    - !ruby/object:Bishop
+      board: *70124368483240
+      color: :w
+      pos:
+      - 7
+      - 2
+      unmoved: true
+    - !ruby/object:Queen
+      board: *70124368483240
+      color: :w
+      pos:
+      - 7
+      - 3
+      unmoved: true
+    - !ruby/object:King
+      board: *70124368483240
+      color: :w
+      pos:
+      - 7
+      - 4
+      unmoved: true
+    - 
+    - 
+    - !ruby/object:Rook
+      board: *70124368483240
+      color: :w
+      pos:
+      - 7
+      - 7
+      unmoved: true
+  graveyard: []
+- &70124368025260 !ruby/object:Board
+  game: *70124367378020
+  grid:
+  - - !ruby/object:Rook
+      board: *70124368025260
+      color: :b
+      pos:
+      - 0
+      - 0
+      unmoved: true
+    - 
+    - !ruby/object:Bishop
+      board: *70124368025260
+      color: :b
+      pos:
+      - 0
+      - 2
+      unmoved: true
+    - 
+    - !ruby/object:King
+      board: *70124368025260
+      color: :b
+      pos:
+      - 0
+      - 4
+      unmoved: true
+    - !ruby/object:Bishop
+      board: *70124368025260
+      color: :b
+      pos:
+      - 0
+      - 5
+      unmoved: true
+    - !ruby/object:Knight
+      board: *70124368025260
+      color: :b
+      pos:
+      - 0
+      - 6
+      unmoved: true
+    - !ruby/object:Rook
+      board: *70124368025260
+      color: :b
+      pos:
+      - 0
+      - 7
+      unmoved: true
+  - - !ruby/object:Pawn
+      board: *70124368025260
+      color: :b
+      pos:
+      - 1
+      - 0
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124368025260
+      color: :b
+      pos:
+      - 1
+      - 1
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124368025260
+      color: :b
+      pos:
+      - 1
+      - 2
+      unmoved: true
+    - 
+    - !ruby/object:Pawn
+      board: *70124368025260
+      color: :b
+      pos:
+      - 1
+      - 4
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124368025260
+      color: :b
+      pos:
+      - 1
+      - 5
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124368025260
+      color: :b
+      pos:
+      - 1
+      - 6
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124368025260
+      color: :b
+      pos:
+      - 1
+      - 7
+      unmoved: true
+  - - 
+    - 
+    - !ruby/object:Knight
+      board: *70124368025260
+      color: :b
+      pos:
+      - 2
+      - 2
+      unmoved: true
+    - !ruby/object:Queen
+      board: *70124368025260
+      color: :b
+      pos:
+      - 2
+      - 3
+      unmoved: true
+    - 
+    - 
+    - 
+    - 
+  - - 
+    - 
+    - 
+    - !ruby/object:Pawn
+      board: *70124368025260
+      color: :b
+      pos:
+      - 3
+      - 3
+      unmoved: true
+    - 
+    - 
+    - 
+    - 
+  - - 
+    - 
+    - 
+    - 
+    - !ruby/object:Pawn
+      board: *70124368025260
+      color: :w
+      pos:
+      - 4
+      - 4
+      unmoved: true
+    - 
+    - 
+    - 
+  - - 
+    - 
+    - 
+    - !ruby/object:Bishop
+      board: *70124368025260
+      color: :w
+      pos:
+      - 5
+      - 3
+      unmoved: true
+    - 
+    - !ruby/object:Knight
+      board: *70124368025260
+      color: :w
+      pos:
+      - 5
+      - 5
+      unmoved: true
+    - 
+    - 
+  - - !ruby/object:Pawn
+      board: *70124368025260
+      color: :w
+      pos:
+      - 6
+      - 0
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124368025260
+      color: :w
+      pos:
+      - 6
+      - 1
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124368025260
+      color: :w
+      pos:
+      - 6
+      - 2
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124368025260
+      color: :w
+      pos:
+      - 6
+      - 3
+      unmoved: true
+    - 
+    - !ruby/object:Pawn
+      board: *70124368025260
+      color: :w
+      pos:
+      - 6
+      - 5
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124368025260
+      color: :w
+      pos:
+      - 6
+      - 6
+      unmoved: true
+    - !ruby/object:Pawn
+      board: *70124368025260
+      color: :w
+      pos:
+      - 6
+      - 7
+      unmoved: true
+  - - !ruby/object:Rook
+      board: *70124368025260
+      color: :w
+      pos:
+      - 7
+      - 0
+      unmoved: true
+    - !ruby/object:Knight
+      board: *70124368025260
+      color: :w
+      pos:
+      - 7
+      - 1
+      unmoved: true
+    - !ruby/object:Bishop
+      board: *70124368025260
+      color: :w
+      pos:
+      - 7
+      - 2
+      unmoved: true
+    - !ruby/object:Queen
+      board: *70124368025260
+      color: :w
+      pos:
+      - 7
+      - 3
+      unmoved: true
+    - !ruby/object:King
+      board: *70124368025260
+      color: :w
+      pos:
+      - 7
+      - 4
+      unmoved: true
+    - 
+    - 
+    - !ruby/object:Rook
+      board: *70124368025260
+      color: :w
+      pos:
+      - 7
+      - 7
+      unmoved: true
+  graveyard: []
+white_player: &70124367790120 !ruby/object:Player
+  name: White Castle
+  color: :w
+  board: *70124367377900
+  game: *70124367378020
+  captured_pieces: []
+black_player: !ruby/object:Player
+  name: Black Knight
+  color: :b
+  board: *70124367377900
+  game: *70124367378020
+  captured_pieces: []
+current_player: *70124367790120

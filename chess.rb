@@ -12,10 +12,11 @@ require_relative "player"
 require_relative "errors"
 require "colorize"
 require "yaml"
+require "debugger"
 
 # TODO:
 # draw conditions
-# movement special cases: en passant, castling
+# movement special cases: en passant
 # computer player
 # source code cleanup - decomposition, line-tightening, privatization
 # split up Game class into Chess (load / save) / Game (play / replay) classes
@@ -42,6 +43,7 @@ class Game
   def play
     save = catch(:save) do
       forfeit = catch(:forfeit) do
+
         puts @board
 
         until over?
@@ -51,6 +53,7 @@ class Game
             start_pos, end_pos = @current_player.play_turn
             validate_start_pos(start_pos)
             @board[start_pos].move(end_pos)
+
             @move_history << @board.dup
           rescue InvalidInputError => e
             puts e

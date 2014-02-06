@@ -67,7 +67,8 @@ class Board
       tile_color = (tile_color == :yellow ? :red : :yellow )
       row.each do |tile|
         if tile
-          string += (tile.to_s + " ").colorize(:background => tile_color)
+          piece_color = (tile.color == :w ? :white : :black)
+          string += (tile.to_s + " ").colorize(:color => piece_color, :background => tile_color)
         else
           string += "  ".colorize(:background => tile_color)
         end
