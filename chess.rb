@@ -16,7 +16,6 @@ require "debugger"
 
 # TODO:
 # draw conditions
-# movement special cases: en passant
 # computer player
 # source code cleanup - decomposition, line-tightening, privatization
 # split up Game class into Chess (load / save) / Game (play / replay) classes
@@ -29,6 +28,7 @@ class Game
   def initialize
     @board = Board.new(self)
     @winner = nil
+    @draw = false
     @move_history = [@board.dup]
     new_or_load
   end
@@ -65,9 +65,11 @@ class Game
 
           puts @board
 
-          if @board.in_check?(next_player.color)
-            if @board.checkmate?(next_player.color)
+          if @board.no_moves?(next_player.color)
+            if @board.in_check?(next_player.color)
               @winner = @current_player
+            else
+              @draw = true
             end
           end
 
@@ -80,7 +82,11 @@ class Game
         @move_history << "#{forfeit} forfeits the game!"
       end
 
-      puts "Game over - #{@winner} is the winner!"
+      if @draw
+        puts "Stalemate - #{@current_player} has no legal moves available."
+      else
+        puts "Game over - #{@winner} is the winner!"
+      end
 
       puts "Would you like to save the replay of this game?  (y/n)"
       save = (gets.chomp.upcase == 'Y')
@@ -100,7 +106,7 @@ class Game
   end
 
   def over?
-    !@winner.nil?
+    !@winner.nil? || @draw == true
   end
 
   def new_or_load

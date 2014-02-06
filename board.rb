@@ -110,7 +110,7 @@ class Board
     ""
   end
 
-  def checkmate?(color)
+  def no_moves?(color)
     player_pieces = self.all_pieces.select { |piece| piece.color == color }
 
     player_pieces.all? do |piece|
