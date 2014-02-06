@@ -12,14 +12,14 @@ require_relative "player"
 require_relative "errors"
 require "colorize"
 require "yaml"
-require "debugger"
 
-# TODO:
-# draw conditions
-# computer player
-# source code cleanup - decomposition, line-tightening, privatization
+# Potential TODO:
 # split up Game class into Chess (load / save) / Game (play / replay) classes
+# source code cleanup - decomposition, line-tightening, privatization
 # general UI improvements
+# draw conditions - 3x same board state, 50 moves in a row without a capture
+# computer player
+# en passant?
 
 class Game
 
